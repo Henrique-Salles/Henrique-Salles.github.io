@@ -1,6 +1,16 @@
 import './App.css'
+import { useState } from 'react'
+import Compform from './components/Compform'
 
 function App() {
+  const [weight,setWeigth]=useState<number>(0)
+  const [height,setHeigth]=useState<number>(0)
+  const [imc,setIMC]=useState<number>(0)
+
+  function calculate() {
+    let res=weight/(height*height)
+    setIMC(res)
+  }
 
   return (
     <>
@@ -11,6 +21,11 @@ function App() {
           <p>
             Informações do paciente:
           </p>
+          <Compform label='Peso (kg)' state={weight} funcState={setWeigth}/>
+          <Compform label='Altura (m)' state={height} funcState={setHeigth}/>
+          <button className="calc-button" onClick={calculate}>Calcular</button>
+          <h2>Resultado:</h2>
+          <h1>{imc}</h1>
         </div>
       </section>
 
