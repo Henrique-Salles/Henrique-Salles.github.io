@@ -1,0 +1,25 @@
+#form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+  margin: 10px;
+
+  .labels{
+    width: 85px;
+  }
+
+  .inputs {
+    font-family: inherit;
+    border: none;
+    border-bottom: 1px solid #9b9b9b;
+    outline: 0;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-size: 15px;
+  }
+}
